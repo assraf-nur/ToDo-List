@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Home = () => {
 
@@ -6,6 +6,10 @@ const Home = () => {
         e.preventDefault();
 
         const text = e.target.text.value;
+        if(text.length === 0) {
+            alert('please enter text');
+            return;
+        }
 
         const todo = {
             text,
@@ -22,6 +26,7 @@ const Home = () => {
     .then(data => {
         console.log(data);
         e.target.reset();
+        window.location.reload();
     });
 
 
@@ -31,9 +36,9 @@ const Home = () => {
         <div>
             <h2 className='text-center text-5xl font-semibold mt-12'>ToDo List</h2>
             <form onSubmit={handleAddTodo} className='text-center mt-12'>
-              <textarea name='text' class="textarea textarea-bordered" placeholder="Bio"></textarea>
+              <textarea name='text' class="textarea textarea-bordered w-96" placeholder="Bio"></textarea>
               <br/>
-              <input className='btn btn-sm mt-5' type="submit" name="submit" value="Add"/>
+              <input className='btn btn-sm mt-5 px-5' type="submit" name="submit" value="Add"/>
             </form>
         </div>
     );
