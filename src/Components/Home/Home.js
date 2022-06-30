@@ -36,7 +36,7 @@ const Home = () => {
         <div>
             <h2 className='text-center text-5xl font-semibold mt-12'>ToDo List</h2>
             <form onSubmit={handleAddTodo} className='text-center mt-12'>
-              <textarea name='text' class="textarea textarea-bordered w-96" placeholder="Bio"></textarea>
+              <textarea name='text' class="textarea textarea-bordered w-96" placeholder="Enter your task here"></textarea>
               <br/>
               <input className='btn btn-sm mt-5 px-5' type="submit" name="submit" value="Add"/>
             </form>
